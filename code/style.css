@@ -11,7 +11,7 @@ h1 {
     color : #FF7F3F;
     text-align : center;
     font-family: 'lobster';
-    font-size : 20px;
+    font-size : 80px;
 }
 .container {
     display : flex;
@@ -29,13 +29,11 @@ h1 {
 }
 
 nav {
-    background-color: #BBC98F;
     border-radius : 5px;
     font-size : 20px 
-}
+} 
 #logo {
-    /* pas eu besoin de definir la largeur */
-    width : 16vh;
+    width : 18vh;
     height : 14vh;
     
 }
@@ -69,4 +67,72 @@ img {
     border-radius: 5px;
     border : 2px solid #312C2E;
     margin : 2px;
+}
+
+/*Desktop menu**************/
+#navbar-desktop {
+    display: flex;
+    justify-content: center;
+    background-color: #BBC98F;
+}
+.navbar-desktop a{
+    color: white;
+    font-weight: 800;
+}
+
+/*Mobile menu**********/
+#navbar-mobile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#navbar-mobile .burger {
+    color: #312C2E;
+}
+#navbar-mobile .burger:active {
+    scale:0.99;
+}
+
+/*fenetre modale*/
+.modal{
+    background-color: #BBC98F;
+    width: 88%;
+    height: 100vh;
+
+    position: fixed;
+    top:0%;
+    left:100%;
+    transition: left 1s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CSS à afficher lors du clique sur burger (JS)*/
+.modal.show-modal{
+    left: 12%;
+}
+.burger.show-modal{
+    position: fixed;
+    top:1rem;
+}
+.modal a{
+    font-size: 4rem;
+    color:#312C2E;
+}
+/*Faire disparaitre le menu mobile*/
+#navbar-mobile{
+    display: none;    
+}
+
+/*Pour tout ecran de 600px au maximum*/
+@media screen and (max-width:600px) {
+    #navbar-desktop{
+        display: none;
+    }
+    #navbar-mobile{
+        display: flex;
+    }
 }
